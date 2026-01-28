@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Environment Variables
+config.env
+.env
+.env.local
+
+# Docker & Database
+mongo-data/
+*.log
+
+# Editor Settings
+.vscode/
+.idea/
+.DS_Store
