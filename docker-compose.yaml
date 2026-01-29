@@ -1,14 +1,13 @@
 services:
-
   frontend:
-    build: ./frontend
+    image: solomonlib/mern-frontend:latest
     ports:
-      - "5173:5173"
+      - "80:5173"
     networks:
       - mern
-    
+
   backend:
-    build: ./backend
+    image: solomonlib/mern-backend:latest
     ports:
       - "5050:5050"
     networks:
