@@ -14,6 +14,7 @@ services:
       - mern
     depends_on:
       - mongodb
+    restart: always
 
   mongodb:
     image: mongo:latest
