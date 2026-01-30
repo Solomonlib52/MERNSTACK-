@@ -13,11 +13,17 @@ services:
     networks:
       - mern
     depends_on:
-      - mongodb
+      mongodb:
+        condition: service_healthy
     restart: always
 
   mongodb:
     image: mongo:latest
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     ports:
       - "27017:27017"
     volumes:
